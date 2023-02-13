@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/action_flecha"
+        android:title="flecha"
+        android:icon="@drawable/appicon_29"
+        app:showAsAction="always"
+        />
+    <item android:id="@+id/action_lupa"
+        android:title="lupa"
+        android:icon="@drawable/lupa"
+        app:showAsAction="ifRoom|withText"
+        />
+    <item android:id="@+id/action_profile"
+        android:title="profile"
+        android:icon="@drawable/profile"
+        app:showAsAction="ifRoom|withText"
+        />
+</menu>
