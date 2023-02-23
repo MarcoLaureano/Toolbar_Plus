@@ -13,8 +13,13 @@
         app:showAsAction="ifRoom|withText"
         />
     <item android:id="@+id/action_profile"
-        android:title="profile"
+        android:title="Profile"
         android:icon="@drawable/profile"
+        app:showAsAction="ifRoom|withText"
+        />
+    <item android:id="@+id/action_plus"
+        android:title="Toolbar Plus"
+        android:icon="@drawable/toolbar"
         app:showAsAction="ifRoom|withText"
         />
 </menu>

@@ -1,39 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".LogIn">
 
+    <include layout="@layout/toolbar"/>
+
+
     <TextView
+        android:layout_marginTop="100dp"
         android:id="@+id/nom"
         android:layout_width="159dp"
         android:layout_height="26dp"
-        android:layout_marginStart="126dp"
-        android:layout_marginTop="176dp"
-        android:layout_marginEnd="126dp"
-        android:layout_marginBottom="23dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/cognom"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        android:layout_gravity="center_horizontal"
+        android:textAlignment="center"
+
+        android:text="TextView" />
 
     <TextView
+        android:layout_marginTop="50dp"
         android:id="@+id/cognom"
         android:layout_width="159dp"
         android:layout_height="26dp"
-        android:layout_marginStart="126dp"
-        android:layout_marginTop="23dp"
-        android:layout_marginEnd="126dp"
-        android:layout_marginBottom="480dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nom"
-        tools:ignore="MissingConstraints" />
+        android:layout_gravity="center_horizontal"
+        android:textAlignment="center"
+        android:text="TextView" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>

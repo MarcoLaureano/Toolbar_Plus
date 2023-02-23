@@ -11,6 +11,7 @@ import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 public class profile extends AppCompatActivity {
     Button btnLogIn;
@@ -19,6 +20,10 @@ public class profile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+        Toolbar toolbarStartPage = findViewById(R.id.toolbarplus);
+        setSupportActionBar(toolbarStartPage);
+        toolbarStartPage.setTitle("");
 
         nom =findViewById(R.id.nom);
         cognom=findViewById(R.id.cognom);
@@ -35,7 +40,6 @@ public class profile extends AppCompatActivity {
         });
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -46,7 +50,7 @@ public class profile extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.action_flecha:
-                Intent i = new Intent(profile.this, ToolBar.class);
+                Intent i = new Intent(profile.this, ToolBarAppBar.class);
                 startActivity(i);
                 return true;
             case R.id.action_profile:
@@ -56,6 +60,10 @@ public class profile extends AppCompatActivity {
             case R.id.action_lupa:
                 Intent d = new Intent(profile.this, Diccionario.class);
                 startActivity(d);
+                return true;
+            case R.id.action_plus:
+                Intent t = new Intent(profile.this, toolbarplus.class);
+                startActivity(t);
                 return true;
         }
         return super.onOptionsItemSelected(item);

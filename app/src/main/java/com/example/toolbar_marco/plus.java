@@ -1,35 +1,26 @@
 package com.example.toolbar_marco;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.TextView;
+import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
-public class LogIn extends AppCompatActivity {
-    TextView nom, cognom;
+public class plus extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_log_in);
+        setContentView(R.layout.activity_toolbarplus);
 
-        Toolbar toolbarStartPage = findViewById(R.id.toolbarplus);
-        setSupportActionBar(toolbarStartPage);
-        toolbarStartPage.setTitle("");
-
-        nom = findViewById(R.id.nom);
-        cognom = findViewById(R.id.cognom);
-
-        Bundle getUsernameNames = getIntent().getExtras();
-
-        nom.setText(getUsernameNames.getString("nom"));
-        cognom.setText(getUsernameNames.getString("cognom"));
+        Toolbar toolbarPlus = findViewById(R.id.toolbarplus);
+        setSupportActionBar(toolbarPlus);
+        toolbarPlus.setTitle("");
     }
 
     @Override
@@ -38,23 +29,25 @@ public class LogIn extends AppCompatActivity {
         inflater.inflate(R.menu.menu, menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        Toast.makeText(this, item.toString(), Toast.LENGTH_SHORT).show();
         switch (item.getItemId()){
             case R.id.action_flecha:
-                Intent i = new Intent(LogIn.this, ToolBarAppBar.class);
+                Intent i = new Intent(plus.this, ToolBarAppBar.class);
                 startActivity(i);
                 return true;
             case R.id.action_profile:
-                Intent p = new Intent(LogIn.this, LogIn.class);
+                Intent p = new Intent(plus.this, profile.class);
                 startActivity(p);
                 return true;
             case R.id.action_lupa:
-                Intent d = new Intent(LogIn.this, Diccionario.class);
+                Intent d = new Intent(plus.this, Diccionario.class);
                 startActivity(d);
                 return true;
             case R.id.action_plus:
-                Intent t = new Intent(LogIn.this, toolbarplus.class);
+                Intent t = new Intent(plus.this, toolbarplus.class);
                 startActivity(t);
                 return true;
         }

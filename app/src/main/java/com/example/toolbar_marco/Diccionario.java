@@ -12,6 +12,7 @@ import android.widget.SearchView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import java.util.ArrayList;
 
@@ -26,6 +27,10 @@ public class Diccionario extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diccionario);
+
+        Toolbar toolbarStartPage = findViewById(R.id.toolbarplus);
+        setSupportActionBar(toolbarStartPage);
+        toolbarStartPage.setTitle("");
 
         buscador = findViewById(R.id.buscador);
         diccionario = findViewById(R.id.frutaList);
@@ -66,12 +71,16 @@ public class Diccionario extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.action_flecha:
-                Intent i = new Intent(Diccionario.this, ToolBar.class);
+                Intent i = new Intent(Diccionario.this, ToolBarAppBar.class);
                 startActivity(i);
                 return true;
             case R.id.action_profile:
                 Intent p = new Intent(Diccionario.this, profile.class);
                 startActivity(p);
+                return true;
+            case R.id.action_plus:
+                Intent t = new Intent(Diccionario.this, toolbarplus.class);
+                startActivity(t);
                 return true;
         }
         return super.onOptionsItemSelected(item);

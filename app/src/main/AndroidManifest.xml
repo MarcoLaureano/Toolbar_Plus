@@ -13,6 +13,20 @@
         android:theme="@style/Theme.Toolbar_Marco"
         tools:targetApi="31">
         <activity
+            android:name=".plus"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".toolbarplus"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".startPage"
             android:exported="false">
             <meta-data
@@ -41,7 +55,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".ToolBar"
+            android:name=".ToolBarAppBar"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
